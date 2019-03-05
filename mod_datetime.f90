@@ -92,7 +92,8 @@ contains
     ! Reads year, month, and day from the command line
     ! and returns the corresponding datetime instance.
     type(datetime), intent(out) :: date
-    character(len=4) :: year_arg, month_arg, day_arg
+    character(len=4) :: year_arg
+    character(len=2) :: month_arg, day_arg
     integer :: year, month, day
     
     if (command_argument_count() < 3) then
