@@ -51,12 +51,11 @@ contains
     days_diff = ndays1 - ndays2
 
     sgn = sign(1.0_real64, days_diff)
-    days_diff = abs(days_diff)
 
-    days = int(days_diff)
-    hours = int((days_diff - days) * d2h)
-    minutes = int((days_diff - days - hours * h2d) * d2m)
-    seconds = int((days_diff - days - hours * h2d & 
+    days = int(abs(days_diff))
+    hours = int((abs(days_diff) - days) * d2h)
+    minutes = int((abs(days_diff) - days - hours * h2d) * d2m)
+    seconds = int((abs(days_diff) - days - hours * h2d & 
                  - minutes * m2d) * d2s)
 
     t = timedelta(sgn * days, sgn * hours, sgn * minutes, sgn * seconds)
