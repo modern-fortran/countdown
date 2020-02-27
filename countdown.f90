@@ -10,9 +10,9 @@ program countdown
     == [birthday % month, birthday % day])) then
     print *, 'Happy Birthday!'
   else
-    write(*,'(i3, a, 3(i2, a))') td % days, ' days, ',&
-                                 td % hours, ' hours, ',&
-                                 td % minutes, ' minutes, and ',&
-                                 td % seconds, ' seconds remaining until your Birthday!'
+    print '(i3, a, 3(i2, a))', td % days, ' days, ',&
+                               td % hours, ' hours, ',&
+                               td % minutes, ' minutes, and ',&
+                               td % seconds, ' seconds remaining until your Birthday!'
   end if
 end program countdown
